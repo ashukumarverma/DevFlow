@@ -1,6 +1,8 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import RenderTag from "./RenderTag";
+
 const hotQuestions = [
   {
     _id: 1,
@@ -21,6 +23,34 @@ const hotQuestions = [
   {
     _id: 5,
     title: "Develpment android or web?",
+  },
+];
+
+const popularTags = [
+  {
+    _id: 1,
+    name: "javaScript",
+    totalQuestions: 5,
+  },
+  {
+    _id: 2,
+    name: "React",
+    totalQuestions: 3,
+  },
+  {
+    _id: 3,
+    name: "next",
+    totalQuestions: 5,
+  },
+  {
+    _id: 4,
+    name: "typeScript",
+    totalQuestions: 5,
+  },
+  {
+    _id: 5,
+    name: "redux",
+    totalQuestions: 4,
   },
 ];
 
@@ -51,7 +81,18 @@ const RightSidebar = () => {
         </div>
       </div>
       <div className="mt-16">
-      <h3 className="h3-bold text-dark200_light900">Populer Tags</h3>
+        <h3 className="h3-bold text-dark200_light900">Popular Tags</h3>
+        <div className="mt-7 flex flex-col gap-4">
+          {popularTags.map((tag) => (
+            <RenderTag
+              key={tag._id}
+              _id={tag._id}
+              name={tag.name}
+              totalQuestions={tag.totalQuestions}
+              showCount
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

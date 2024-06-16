@@ -5,50 +5,50 @@ import RenderTag from "./RenderTag";
 
 const hotQuestions = [
   {
-    _id: 1,
+    _id: "1",
     title: "How can i use DevFlow?",
   },
   {
-    _id: 2,
+    _id: "2",
     title: "What is mongoose?",
   },
   {
-    _id: 3,
+    _id: "3",
     title: "NextJS roadmap?",
   },
   {
-    _id: 4,
+    _id: "4",
     title: "DSA and Placement?",
   },
   {
-    _id: 5,
+    _id: "5",
     title: "Develpment android or web?",
   },
 ];
 
 const popularTags = [
   {
-    _id: 1,
+    _id: "1",
     name: "javaScript",
     totalQuestions: 5,
   },
   {
-    _id: 2,
+    _id: "2",
     name: "React",
     totalQuestions: 3,
   },
   {
-    _id: 3,
+    _id: "3",
     name: "next",
     totalQuestions: 5,
   },
   {
-    _id: 4,
+    _id: "4",
     name: "typeScript",
     totalQuestions: 5,
   },
   {
-    _id: 5,
+    _id: "5",
     name: "redux",
     totalQuestions: 4,
   },

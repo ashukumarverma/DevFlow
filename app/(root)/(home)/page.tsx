@@ -6,45 +6,12 @@ import Link from "next/link";
 import HomeFilters from "@/components/home/HomeFilters";
 import NoResult from "@/components/shared/NoResult";
 import QuestionCard from "@/components/cards/QuestionCard";
+import { getQuestions } from "@/lib/actions/question.action";
 
-const questions = [
-  {
-    _id: "1",
-    title: "How to use React Query with Next.js?",
-    tags: [
-      { _id: "1", name: "React" },
-      { _id: "2", name: "Next.js" },
-    ],
-    author: {
-      _id: "1",
-      name: "Ashutosh Kumar",
-      picture: "ashu.jpg",
-    },
-    upvotes: 1800,
-    views: 2000000,
-    answers: [],
-    createdAt: new Date("2024-06-12T05:30:00.000Z"),
-  },
-  {
-    _id: "2",
-    title: "How to center a div in CSS?",
-    tags: [
-      { _id: "3", name: "CSS" },
-      { _id: "2", name: "Next.js" },
-    ],
-    author: {
-      _id: "1",
-      name: "Ashutosh Kumar",
-      picture: "ashu.jpg",
-    },
-    upvotes: 5,
-    views: 50,
-    answers: [],
-    createdAt: new Date("2024-06-12T05:30:00.000Z"),
-  },
-];
+export default async function Home() {
+  const result = await getQuestions({});
+  console.log(result.questions);
 
-export default function Home() {
   return (
     <>
       <div className="flex w-full flex-col-reverse justify-between gap-4 sm:flex-row sm:items-center">
@@ -72,8 +39,8 @@ export default function Home() {
       <HomeFilters />
 
       <div className="mt-10 flex w-full flex-col gap-6">
-        {questions.length > 0 ? (
-          questions.map((question) => (
+        {result.questions.length > 0 ? (
+          result.questions.map((question) => (
             <QuestionCard
               key={question._id}
               _id={question._id}
